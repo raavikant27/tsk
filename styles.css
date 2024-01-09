@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h3 {
+  color: rgb(0, 125, 250);
+  padding: 2%;
+  margin: 3;
+}
+h3:hover {
+  color: black;
+}
+.bookinglink {
+  color: rgb(0, 125, 250);
+  text-decoration: none;
+}
+.bookinglink:hover {
+  color: black;
+}
+.bookinglink.clicked {
+  color: red;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // flex-direction: wrap;
+  // flex-flow: row wrap;
+  align-items: center;
+  height: 500px;
+  //align-content: stretch;
+}
+.card {
+  width: 33%;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  //overscroll-behavior-inline: x;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(60%);
+  box-shadow: 0 0 20px #7470ec;
+  object-fit: cover;
+  // object-position: 2%;
+}
+.card:hover {
+  transform: scale(1.03);
+  transition: 0.5s;
+  filter: drop-shadow(0 0 10px #093b41);
+}
+.card:hover img {
+  filter: grayscale(0%);
+}
+.card figcaption {
+  // position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  height: 20%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  border-radius: 0 0 10px 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(8, 181, 69, 0.5) 0%,
+    rgba(4, 217, 57, 0.886) 100%
+  );
+  transition: 0.3s;
+}
+.card:hover figcaption {
+  opacity: 1;
+  transform: scale(1.03);
+}
+.tooltips:hover .tooltipstext {
+  visibility: visible;
+  display: block;
+}
+.tooltips .tooltipstext {
+  visibility: hidden;
+  width: 100px;
+  background-color: rgb(35, 211, 176);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+}
+.icon {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  display: block;
+  font-size: 100px;
+  color: rgba(233, 14, 14, 0.885);
+  background-color: rgba(0, 255, 76, 0.801);
+  font-size: x-small;
+}
+.icon:hover {
+  opacity: 1;
+  transform: scale(1.03);
+}
+#imgg {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#imgg > figure {
+  width: 20rem;
+}
+.plusphto {
+  background-color: black;
+  //display: inline;
+  width: 33%;
+  z-index: 10;
+  // object-fit: contain;
+  position: relative;
+}
+.plusphto > figure > img {
+  width: 100%;
+  z-index: 0;
+  position: relative;
+}
+
+@media only screen and (min-width: 600px) {
+  .card {
+    width: calc(50% - 1vw);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    width: calc(33.3333% - 1.5vw);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    padding: 2vw;
+  }
+
+  .card {
+    width: calc(25% - 2vw);
+  }
+}
